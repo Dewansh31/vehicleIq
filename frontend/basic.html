@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VehicleIQ</title>
+
+    <!-- Linking CSS here -->
+    <link rel="stylesheet" href="styles.css">
+
+
+    <!-- Including bs5 here -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+
+    <!-- Icluding ChartJS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Including FontAwsome here -->
+    <script src="https://kit.fontawesome.com/bcf8a10dd9.js" crossorigin="anonymous"></script>
+
+</head>
+<body class="bodyClass">
+
+    <!-- Navbar here -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark custom-nav-size">
+        <!-- Navbar content -->
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">VehicleIQ</a>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="basic.html">Basic</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Advanced</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+    <h2 class="vehicleName">Volkswagen Virtus</h2>
+
+    <!-- First row widgets -->
+    <div class="container-fluid dash-content">
+      <div class="row">
+        <!-- Fuel Level widget here -->
+        <div class="col-md-6">
+          <div class="level-box">
+            <div class="level-box-des level-box-des-gr1">
+              <div class="level-box-title">FUEL LEVEL</div>
+                <section class="section-1">
+                <div class="level-box-readings">
+                  <div class="level-box-value">125</div>
+                  <div class="level-box-metric">L</div>
+                </div>
+              </section>
+              <section class="section-2">
+                <canvas id="fuelLevel" class="level-box-chart"></canvas>
+              </section>
+            </div>
+          </div>
+        </div>
+        <!-- Fuel Level widget end -->
+
+        <!-- Range level widget here -->
+        <div class="col-md-6">
+          <div class="level-box">
+            <div class="level-box-des level-box-des-gr2">
+              <div class="level-box-title">RANGE</div>
+              <section class="section-1">
+              <div class="level-box-readings">
+                <div class="level-box-value">300</div>
+                <div class="level-box-metric">KM</div>
+              </div>
+            </section>
+              <section class="section-2">
+                <canvas id="rangeLevel" class="level-box-chart"></canvas>
+              </section>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Range level widget end -->
+
+        
+  <div class="row">
+          
+          <!-- Remote control utility here -->
+    <div class="col-md-6 level-box level-box-des-remote">
+      <div class="col-md-12  remote-ctrl-title">REMOTE CONTROL</div>
+      <div class="remote-ctrl-btns-row">
+        
+        <button style="--clr:#7afc0f;" class="col-md-4 neon-button neon-button-basic"><span class="neon-button-span "><i class="fa-solid fa-power-off"></i></i></span><i class="neon-button-i"></i></button>
+        
+        <button style="--clr:#fcec0f;" class="col-md-4 neon-button neon-button-basic"><span class="neon-button-span "><i class="fa-regular fa-lightbulb fa-lg"></i></i></span><i class="neon-button-i"></i></button>
+        
+        <button style="--clr:#ffffff;" class="col-md-4 neon-button neon-button-basic"><span class="neon-button-span "><i class="fa-solid fa-lock"></i></i></span><i class="neon-button-i"></i></button>
+        
+        <button style="--clr:#fc330f;" class="col-md-4 neon-button neon-button-basic"><span class="neon-button-span"><i class="fa-solid fa-ban"></i></i></span><i class="neon-button-i"></i></button>
+      </div>
+      
+    </div>      
+    
+    <!-- Climate control utility here -->
+    <div class="col-md-6 level-box level-box-des-climate">
+      <div class="col-md-12  climate-ctrl-title">CLIMATE CONTROL</div>
+      <!-- <div class="row col-md-12" style="display: flex; flex-wrap: wrap;"> -->
+        <div class="col-md-4 offset-md-1 climate-ctrl-displays"><i class="fa-solid fa-fan fa-xl"></i> 200</div>
+        <div class="col-md-4 offset-md-2 climate-ctrl-displays"><i class="fa-solid fa-temperature-three-quarters fa-xl"></i> 24</div>
+      <!-- </div> -->
+
+      <div class="climate-ctrl-btns">
+        <button style="--clr:#0f27fc;" class="col-md-2 neon-button neon-button-basic"><span class="neon-button-span"><i class="fa-solid fa-fan fa-2xl"></i></i></span><i class="neon-button-i"></i></button>
+        
+        <button style="--clr:#420ffc;" class="col-md-2 neon-button neon-button-basic"><span class="neon-button-span"><i class="fa-solid fa-fan fa-sm"></i></i></span><i class="neon-button-i"></i></button>
+
+        <button style="--clr:#0ff4fc;" class="col-md-2 neon-button neon-button-basic"><span class="neon-button-span"><i class="fa-solid fa-angles-up"></i></i></span><i class="neon-button-i"></i></button>
+        
+        <button style="--clr:#fcb10f;" class="col-md-2 neon-button neon-button-basic"><span class="neon-button-span"><i class="fa-solid fa-angles-down"></i></i></span><i class="neon-button-i"></i></button>
+        
+      </div>
+      <div class="climate-ctrl-btns">
+        <button style="--clr:#c9fc0f;" class="col-md-2 neon-button neon-button-basic"><span class="neon-button-span"><i class="fa-solid fa-wand-sparkles"></i></i> Auto</span><i class="neon-button-i"></i></button>
+        
+        <button style="--clr:#fc3e0f;" class="col-md-2 neon-button neon-button-basic"><span class="neon-button-span"><i class="fa-solid fa-power-off"></i></i> Off</span><i class="neon-button-i"></i></button>
+        
+      </div>
+    </div>
+    
+  </div>
+</div>    
+
+</div>
+  <!-- Script for ChartJS -->
+  <script>
+
+      // For fuel level
+      const c1 = document.getElementById('fuelLevel').getContext('2d');
+      const fuelLevel = new Chart(c1, {
+          type: 'doughnut',
+          data: {
+              labels: ['Red', 'Blue'],
+              datasets: [{
+                  label: 'Dataset 1',
+                  data: [12, 19],
+                  backgroundColor: [
+                      'rgba(255, 99, 132, 0.2)',
+                      'rgba(54, 162, 235, 0.2)',
+                  ],
+                  borderColor: [
+                      'rgba(255, 99, 132, 1)',
+                      'rgba(54, 162, 235, 1)',
+                  ],
+                  borderWidth: 1
+              }]
+          },
+          options: {
+              plugins: {
+                  legend: {
+                      display: false
+                  }
+              }
+          }
+      });
+
+
+
+      // For fuel level
+      const c2 = document.getElementById('rangeLevel').getContext('2d');
+      const rangeLevel = new Chart(c2, {
+          type: 'doughnut',
+          data: {
+              labels: ['Red', 'Blue'],
+              datasets: [{
+                  label: 'Dataset 1',
+                  data: [12, 19],
+                  backgroundColor: [
+                      'rgba(255, 99, 132, 0.2)',
+                      'rgba(54, 162, 235, 0.2)',
+                  ],
+                  borderColor: [
+                      'rgba(255, 99, 132, 1)',
+                      'rgba(54, 162, 235, 1)',
+                  ],
+                  borderWidth: 1
+              }]
+          },
+          options: {
+              plugins: {
+                  legend: {
+                      display: false
+                  }
+              }
+          }
+      });
+  </script>    
+
+</body>
+</html>

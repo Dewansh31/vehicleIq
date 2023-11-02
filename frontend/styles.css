@@ -1,0 +1,431 @@
+
+/* BS icons */
+.navbar-icon {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    font-family: "Bootstrap Icons";
+    fill: currentColor;
+    margin-right: 0.5rem;
+  }
+
+  /* Nav style also here */
+.custom-nav-size{
+    height: 60px;
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, #90B8F8 25%, #90B8F8 64%);
+    border-radius: 50px;
+    margin-top: 1%;
+}
+
+.bodyClass{
+  /* Old gradient one */
+  /* background: rgb(0,0,0);
+  background: linear-gradient(0deg, rgba(0,0,0,1) 25%, rgba(36,36,36,1) 64%); */
+
+  /* Plain bg */
+  background-color: #26282B;
+}
+
+.home-content-wrapper{
+  border: #5F85DB solid;
+  border-radius: 20px;
+  overflow: hidden;
+  box-sizing: border-box;
+  margin-top: 5%;
+  padding-bottom: 5%;
+}
+
+.dash-content{
+    /* margin: auto; */
+    margin-top: 3%;
+}
+
+.rc-control{
+    align-items: center;
+}
+
+.btn-rounded{
+    border-radius: 50%;
+}
+
+/* Level/Stats styles here */
+
+  .level-box {
+    height: 100%;
+    margin: 0 auto;
+    }
+
+
+  @media (min-width: 384px) {
+    .level-box{
+      width: 80%;
+    }
+  }
+
+.section-1,
+.section-2 {
+  display: inline-block;
+  width: 50%;
+}
+  .level-box-des {
+    border-radius: 45px;
+    border: 3px solid #5F85DB;
+    align-self: auto;
+    display: flex;
+    width: auto;
+    flex-grow: 1;
+    flex-direction: row;
+    padding: 41px 20px 33px;
+    margin: 5%;
+  }
+  .level-box-des-gr1{
+    background: linear-gradient(180deg, #353941 0%, #26282B 57.14%);
+  }
+  .level-box-des-gr2{
+    background: linear-gradient(180deg, #353941 0%, #26282B 57.14%);
+  }
+  .level-box-title {
+    justify-content: center;
+    color: #787878;
+    text-align: center;
+    font: 400 16px Inter, sans-serif;
+    writing-mode: vertical-rl;
+    text-orientation: revert;
+    margin: 1%;
+  }
+  .level-box-readings {
+    align-self: center;
+    display: flex;
+    margin-top:40%;
+    margin-right:5%;
+    margin-left:8%;
+    width: 100%;
+    max-width: 100%;
+    align-items: flex-start;
+    gap: 2%;
+  }
+  .level-box-value {
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    align-self: start;
+    font: 700 200% Inter, sans-serif;   
+  }
+  .level-box-metric {
+    justify-content: center;
+    color: #787878;
+    text-align: center;
+    align-self: start;
+    margin-top: 12px;
+    font: 300 150% Inter, sans-serif;
+  }
+
+  @media (min-width: 384px) {
+    .level-box-value {
+      /* justify-content: center; */
+      color: #fff;
+      /* text-align: center; */
+      /* align-self: start; */
+      font: 700 32px Inter, sans-serif;
+      /* float: none; */
+      
+    }
+    .level-box-metric {
+      justify-content: center;
+      color: #787878;
+      text-align: center;
+      align-self: start;
+      margin-top: 12px;
+      font: 300 16px Inter, sans-serif;
+    }
+  }
+  .level-box-chart {
+    /* aspect-ratio: 0.96; */
+    /* object-fit: cover; */
+    /* object-position: center; */
+    /* width: 103px; */
+    /* overflow: hidden; */
+    /* border-radius: 50%; */
+    /* align-self: center; */
+    margin: 5%;
+    /* max-width: 100%; */
+  }
+
+  @media (min-width: 384px) {
+    .level-box-chart{
+      width: 70%;
+    }
+  }
+
+
+  /* Remote control utility styles here */
+
+  .remote-ctrl-title{
+    margin: 0 auto;
+    margin-bottom: 10%;
+    text-align: center;
+    color: white;
+    font-size: 150%;
+    font-weight: bolder;
+  }
+  @media (max-width: 300px) {
+    .remote-ctrl-title{
+      font-size: 100%;
+    }
+  }
+
+  .remote-ctrl-btns-row{
+    align-items: center;
+    /* margin: auto; */
+    align-self: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-evenly;
+  }
+  
+  .level-box-des-remote{
+    border-radius: 10px;
+    border: 3px solid #90B8F8;
+    align-self: auto;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    flex-grow: 1;
+    flex-direction: row;
+    padding: 41px 10px 54px;
+    margin: 0%;
+    background: linear-gradient(180deg, #353941 0%, #26282B 57.14%);
+  }
+
+  @media (max-width: 690px) {
+    .level-box-des-remote{
+      padding: 41px 10px 25px;
+      margin-bottom: 2%;
+    }  
+  }
+
+
+    /* Climate control utility styles here */
+    
+    .climate-ctrl-title{
+      margin: 0 auto;
+      margin-bottom: 1%;
+      text-align: center;
+      color: white;
+      font-size: 150%;
+      font-weight: bolder;
+      width: 100%;
+    }
+
+    @media (max-width: 300px) {
+      .climate-ctrl-title{
+        font-size: 100%;
+      }
+    }
+    .level-box-des-climate{
+      border-radius: 10px;
+      border: 3px solid #90B8F8;
+      align-self: auto;
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      flex-grow: 1;
+      flex-direction: row;
+      padding: 41px 20px 33px;
+      margin: 0%;
+      background: linear-gradient(180deg, #353941 0%, #26282B 57.14%);
+    }
+
+    .climate-ctrl-displays{
+      background-color: #444;
+      color: white;
+      font-weight: bold;
+      border: 2px solid white;
+      text-align: center;
+      height: 40px;
+      border-radius: 5px;
+      padding: 1%;
+      margin: 1%;
+      width: 48%;
+     }
+
+    .climate-ctrl-btns{
+      align-items: center;
+      margin: auto;
+      align-self: auto;
+      display: flex;
+      flex-wrap: wrap;
+      flex-grow: 1;
+      flex-direction: row;
+      align-content: center;
+      justify-content: space-evenly;
+      width: 100%;
+    }
+
+
+
+    /* Button styles here */
+    .neon-button {
+      position: relative;
+      background: #444;
+      color: #fff;
+      text-decoration: none;
+      text-transform: uppercase;
+      border: none;
+      /* letter-spacing: 0.1rem; */
+      font-size: 1rem;
+      padding: 1rem 3rem;
+      transition: 0.2s;
+    }
+
+    .neon-button-home{
+      width: 40%;
+      overflow: hidden;
+    }
+
+    @media (max-width: 540px) {
+      .neon-button-home{
+        width: auto;
+        overflow: hidden;
+      }
+    }
+
+    .neon-button-basic{
+     
+      /* overflow: hidden; */
+      width: auto;
+      font-size: 1rem;
+      padding: 1.5rem 2rem;
+      margin: 2%;
+    }
+
+    @media (max-width: 540px) {
+      .neon-button-basic{
+        overflow: hidden;
+        padding: 0.6rem 1.1rem;
+      }
+    }
+
+    .neon-button:hover {
+      letter-spacing: 0.2rem;
+      /* padding: 1.1rem 3.1rem; */
+      background: var(--clr);
+      color: var(--clr);
+      /* box-shadow: 0 0 35px var(--clr); */
+      animation: box 3s infinite;
+    }
+    
+    .neon-button::before {
+      content: "";
+      position: absolute;
+      inset: 2px;
+      background: #272822;
+    }
+    
+    .neon-button-span {
+      position: relative;
+      z-index: 1;
+    }
+    .neon-button-i {
+      position: absolute;
+      inset: 0;
+      display: block;
+    }
+    
+    .neon-button-i::before {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 2px;
+      left: 80%;
+      top: -2px;
+      border: 2px solid var(--clr);
+      background: #272822;
+      transition: 0.2s;
+    }
+    
+    .neon-button:hover .neon-button-i::before {
+      width: 15px;
+      left: 20%;
+      animation: move 3s infinite;
+    }
+    
+    .neon-button .neon-button-i::after {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 2px;
+      left: 20%;
+      bottom: -2px;
+      border: 2px solid var(--clr);
+      background: #272822;
+      transition: 0.2s;
+    }
+    
+    .neon-button:hover .neon-button-i::after {
+      width: 15px;
+      left: 80%;
+      animation: move 3s infinite;
+    }
+    
+    @keyframes move {
+      0% {
+        transform: translateX(0);
+      }
+      50% {
+        transform: translateX(5px);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes box {
+      0% {
+        box-shadow: #27272c;
+      }
+      50% {
+        box-shadow: 0 0 25px var(--clr);
+      }
+      100% {
+        box-shadow: #27272c;
+      }
+    }
+    
+
+/* Basic Page Vehicle Title style */
+
+.vehicleName
+{
+  /* text-transform: uppercase; */
+  text-align: center;
+  margin-top: 3%;
+  background-image: linear-gradient(
+    -225deg,
+    #5F85DB 0%,
+    #ffffff 29%,
+    #90B8F8 67%,
+    #5F85DB 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  /* text-fill-color: transparent; */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 10s linear infinite;
+  /* display: inline-block; */
+      /* font-size: 190px; */
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
