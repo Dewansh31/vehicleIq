@@ -287,6 +287,13 @@
       overflow: hidden;
     }
 
+    .neon-button-submit{
+      width: auto;
+      font-size: 0.5rem;
+      padding: 0.4rem 0.6rem;
+      margin: 2%;
+    }
+
     @media (max-width: 540px) {
       .neon-button-home{
         width: auto;
@@ -429,3 +436,11 @@
     background-position: 200% center;
   }
 }
+
+
+/* Simulation page styles here */
+  input::placeholder {
+    /* color: #5F85DB; */
+    color: white;
+    font-style: italic;
+  }
