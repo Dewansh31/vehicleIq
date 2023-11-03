@@ -311,7 +311,7 @@
     }
 
     .neon-button:hover {
-      letter-spacing: 0.2rem;
+      /* letter-spacing: 0.2rem; */
       /* padding: 1.1rem 3.1rem; */
       background: var(--clr);
       color: var(--clr);
@@ -401,7 +401,7 @@
 
 .vehicleName
 {
-  /* text-transform: uppercase; */
+  text-transform: uppercase;
   text-align: center;
   margin-top: 3%;
   background-image: linear-gradient(
