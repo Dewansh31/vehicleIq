@@ -287,6 +287,13 @@
       overflow: hidden;
     }
 
+    .neon-button-submit{
+      width: auto;
+      font-size: 100%;
+      padding: 3px 3px;
+      margin-left: 2%;
+    }
+
     @media (max-width: 540px) {
       .neon-button-home{
         width: auto;
@@ -311,7 +318,7 @@
     }
 
     .neon-button:hover {
-      letter-spacing: 0.2rem;
+      /* letter-spacing: 0.2rem; */
       /* padding: 1.1rem 3.1rem; */
       background: var(--clr);
       color: var(--clr);
@@ -371,6 +378,11 @@
       left: 80%;
       animation: move 3s infinite;
     }
+
+    .neon-button-toggled{
+      background: var(--clr);
+      color: var(--clr);     
+    }
     
     @keyframes move {
       0% {
@@ -401,7 +413,7 @@
 
 .vehicleName
 {
-  /* text-transform: uppercase; */
+  text-transform: uppercase;
   text-align: center;
   margin-top: 3%;
   background-image: linear-gradient(
@@ -429,3 +441,24 @@
     background-position: 200% center;
   }
 }
+
+
+/* Simulation page styles here */
+  input::placeholder {
+    /* color: #5F85DB; */
+    color: white;
+    font-style: italic;
+  }
+
+  .vehicle-simulation-title{
+    color: #5F85DB; margin: 5% auto 2% auto; text-align: center;
+  }
+
+  .simulation-form-container{
+    justify-content: center; 
+    align-items: center;
+  }
+
+  .simulation-stat-placeholder{
+    background-color: #26282B; border: none; color: white; font-style: italic;
+  }

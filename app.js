@@ -1,4 +1,3 @@
-const carSchema = require('./db/carSchema');
 const WebSocket = require('ws');
 const express = require('express');
 const app = express();

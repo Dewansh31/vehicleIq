@@ -6,7 +6,7 @@
     <title>VehicleIQ</title>
 
     <!-- Linking CSS here -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./src/css/styles.css">
 
 
     <!-- Including bs5 here -->
@@ -27,7 +27,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark custom-nav-size">
         <!-- Navbar content -->
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">VehicleIQ</a>
+          <a class="navbar-brand" href="index.html"><strong>VehicleIQ</strong></a>
 
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -35,18 +35,18 @@
 
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-              </li>
+              </li> -->
               <li class="nav-item">
                 <a class="nav-link" href="basic.html">Basic</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Advanced</a>
+                <a class="nav-link" href="drow-det.html">Advanced</a>
               </li>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-              </li>
+              </li> -->
             </ul>
           </div>
         </div>
@@ -65,7 +65,7 @@
               <div class="level-box-title">FUEL LEVEL</div>
                 <section class="section-1">
                 <div class="level-box-readings">
-                  <div class="level-box-value">125</div>
+                  <div class="level-box-value">25</div>
                   <div class="level-box-metric">L</div>
                 </div>
               </section>
@@ -105,13 +105,13 @@
       <div class="col-md-12  remote-ctrl-title">REMOTE CONTROL</div>
       <div class="remote-ctrl-btns-row">
         
-        <button style="--clr:#7afc0f;" class="col-md-4 neon-button neon-button-basic"><span class="neon-button-span "><i class="fa-solid fa-power-off"></i></i></span><i class="neon-button-i"></i></button>
+        <button id="engineOn" style="--clr:#7afc0f;" class="col-md-4 neon-button neon-button-basic"><span class="neon-button-span "><i class="fa-solid fa-power-off"></i></i></span><i class="neon-button-i"></i></button>
         
-        <button style="--clr:#fcec0f;" class="col-md-4 neon-button neon-button-basic"><span class="neon-button-span "><i class="fa-regular fa-lightbulb fa-lg"></i></i></span><i class="neon-button-i"></i></button>
+        <button id="lightStatus" style="--clr:#fcec0f;" class="col-md-4 neon-button neon-button-basic"><span class="neon-button-span "><i class="fa-regular fa-lightbulb fa-lg"></i></i></span><i class="neon-button-i"></i></button>
         
-        <button style="--clr:#ffffff;" class="col-md-4 neon-button neon-button-basic"><span class="neon-button-span "><i class="fa-solid fa-lock"></i></i></span><i class="neon-button-i"></i></button>
+        <button id="doorStatus" style="--clr:#ffffff;" class="col-md-4 neon-button neon-button-basic neon-button-toggled"><span class="neon-button-span "><i class="fa-solid fa-lock"></i></i></span><i class="neon-button-i"></i></button>
         
-        <button style="--clr:#fc330f;" class="col-md-4 neon-button neon-button-basic"><span class="neon-button-span"><i class="fa-solid fa-ban"></i></i></span><i class="neon-button-i"></i></button>
+        <button id="engineOff" style="--clr:#fc330f;" class="col-md-4 neon-button neon-button-basic neon-button-toggled"><span class="neon-button-span"><i class="fa-solid fa-ban"></i></i></span><i class="neon-button-i"></i></button>
       </div>
       
     </div>      
@@ -120,24 +120,26 @@
     <div class="col-md-6 level-box level-box-des-climate">
       <div class="col-md-12  climate-ctrl-title">CLIMATE CONTROL</div>
       <!-- <div class="row col-md-12" style="display: flex; flex-wrap: wrap;"> -->
-        <div class="col-md-4 offset-md-1 climate-ctrl-displays"><i class="fa-solid fa-fan fa-xl"></i> 200</div>
-        <div class="col-md-4 offset-md-2 climate-ctrl-displays"><i class="fa-solid fa-temperature-three-quarters fa-xl"></i> 24</div>
+        <div class="col-md-4 offset-md-1 climate-ctrl-displays"><i class="fa-solid fa-fan fa-xl"></i> <span id="fanSpeed"> 0</span></div>
+        <div class="col-md-4 offset-md-2 climate-ctrl-displays"><i class="fa-solid fa-temperature-three-quarters fa-xl"></i><span id="temp"> 24</span>°C</div>
       <!-- </div> -->
 
       <div class="climate-ctrl-btns">
-        <button style="--clr:#0f27fc;" class="col-md-2 neon-button neon-button-basic"><span class="neon-button-span"><i class="fa-solid fa-fan fa-2xl"></i></i></span><i class="neon-button-i"></i></button>
+        <button id="fanPlus" style="--clr:#0f27fc;" class="col-md-2 neon-button neon-button-basic"><span class="neon-button-span"><i class="fa-solid fa-fan fa-2xl"></i></i></span><i class="neon-button-i"></i></button>
         
-        <button style="--clr:#420ffc;" class="col-md-2 neon-button neon-button-basic"><span class="neon-button-span"><i class="fa-solid fa-fan fa-sm"></i></i></span><i class="neon-button-i"></i></button>
+        <button id="fanMinus" style="--clr:#420ffc;" class="col-md-2 neon-button neon-button-basic"><span class="neon-button-span"><i class="fa-solid fa-fan fa-sm"></i></i></span><i class="neon-button-i"></i></button>
 
-        <button style="--clr:#0ff4fc;" class="col-md-2 neon-button neon-button-basic"><span class="neon-button-span"><i class="fa-solid fa-angles-up"></i></i></span><i class="neon-button-i"></i></button>
+        <button id="tempPlus" style="--clr:#0ff4fc;" class="col-md-2 neon-button neon-button-basic"><span class="neon-button-span"><i class="fa-solid fa-angles-up"></i></i></span><i class="neon-button-i"></i></button>
         
-        <button style="--clr:#fcb10f;" class="col-md-2 neon-button neon-button-basic"><span class="neon-button-span"><i class="fa-solid fa-angles-down"></i></i></span><i class="neon-button-i"></i></button>
+        <button id="tempMinus" style="--clr:#fcb10f;" class="col-md-2 neon-button neon-button-basic"><span class="neon-button-span"><i class="fa-solid fa-angles-down"></i></i></span><i class="neon-button-i"></i></button>
         
       </div>
       <div class="climate-ctrl-btns">
-        <button style="--clr:#c9fc0f;" class="col-md-2 neon-button neon-button-basic"><span class="neon-button-span"><i class="fa-solid fa-wand-sparkles"></i></i> Auto</span><i class="neon-button-i"></i></button>
+        <button id="autoClimate" style="--clr:#c9fc0f;" class="col-md-2 neon-button neon-button-basic"><span class="neon-button-span"><i class="fa-solid fa-wand-sparkles"></i></i> Auto</span><i class="neon-button-i"></i></button>
         
-        <button style="--clr:#fc3e0f;" class="col-md-2 neon-button neon-button-basic"><span class="neon-button-span"><i class="fa-solid fa-power-off"></i></i> Off</span><i class="neon-button-i"></i></button>
+        <button id="onAC" style="--clr:#2bfc0f;" class="col-md-2 neon-button neon-button-basic"><span class="neon-button-span"><i class="fa-solid fa-wind"></i></i> AC</span><i class="neon-button-i"></i></button>
+
+        <button id="offClimate" style="--clr:#fc3e0f;" class="col-md-2 neon-button neon-button-basic neon-button-toggled"><span class="neon-button-span"><i class="fa-solid fa-power-off"></i></i> Off</span><i class="neon-button-i"></i></button>
         
       </div>
     </div>
@@ -154,10 +156,10 @@
       const fuelLevel = new Chart(c1, {
           type: 'doughnut',
           data: {
-              labels: ['Red', 'Blue'],
+              labels: ['Fuel Consumed', 'Fuel Remaining'],
               datasets: [{
-                  label: 'Dataset 1',
-                  data: [12, 19],
+                  label: 'Fuel',
+                  data: [30-25, 25],
                   backgroundColor: [
                       'rgba(255, 99, 132, 0.2)',
                       'rgba(54, 162, 235, 0.2)',
@@ -185,10 +187,10 @@
       const rangeLevel = new Chart(c2, {
           type: 'doughnut',
           data: {
-              labels: ['Red', 'Blue'],
+              labels: ['Range Decrement', 'Range Available'],
               datasets: [{
-                  label: 'Dataset 1',
-                  data: [12, 19],
+                  label: 'Range',
+                  data: [25, 100-25],
                   backgroundColor: [
                       'rgba(255, 99, 132, 0.2)',
                       'rgba(54, 162, 235, 0.2)',
@@ -208,7 +210,11 @@
               }
           }
       });
+
   </script>    
+<script src="./src/js/script.js"></script>
+<script src="./src/js/scriptB.js"></script>
+<script src="./src/js/controlNav.js"></script>
 
 </body>
 </html>

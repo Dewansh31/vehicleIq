@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VehicleIQ</title>
+
+    <!-- Linking CSS here -->
+    <link rel="stylesheet" href="./src/css/styles.css">
+
+
+    <!-- Including bs5 here -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+
+    <!-- Icluding ChartJS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Including FontAwsome here -->
+    <script src="https://kit.fontawesome.com/bcf8a10dd9.js" crossorigin="anonymous"></script>
+
+</head>
+<body class="bodyClass">
+
+    <!-- Navbar here -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark custom-nav-size">
+        <!-- Navbar content -->
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><strong>VehicleIQ</strong></a>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <!-- <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li> -->
+              <li class="nav-item">
+                <a class="nav-link" href="basic.html">Basic</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="drow-det.html">Advanced</a>
+              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              </li> -->
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <h1 class="vehicle-simulation-title"><strong>Vehicle Simulation</strong></h1>
+
+      <div class="container d-flex simulation-form-container">
+        <div class="row">
+            <label for="VehicleID" style="color: #5F85DB;" class="col-md-3">VehicleID:</label>
+            
+            <input id="VehicleID" style="color: #5F85DB; height: fit-content;" class="col-md-3" placeholder="VehicleID">
+            
+            <button style="--clr:#5F85DB;" class="col-md-3 neon-button neon-button-submit" ><span class="neon-button-span">Submit</span><i class="neon-button-i"></i></button>
+        </div>
+    </div>
+
+      <div class="container home-content-wrapper">
+
+        <div class="container d-flex justify-content-center">
+
+          <label class="col-md-2" style="overflow: hidden; color: #5F85DB; margin-top: 5%; margin-bottom: 5%; font-weight: bolder;">Vehicle Name:  </label>
+          <!-- <input class="col-md-2" style="overflow: hidden; margin-top: 5%; margin-left: 1%; margin-bottom: 5%; background-color: #26282B; border: none;" class="vehicle-name-placeholder">Volkswagen Virtus</input> -->
+          <span id="VehicleName" style="overflow: hidden; margin-top: 5%; margin-left: 1%; margin-bottom: 5%; background-color: #26282B; border: none;" class="col-md-2 simulation-stat-placeholder">Volkswagen Virtus</span>
+        </div>
+        
+        <div class="row">
+            <label style="color: #5F85DB;" class="col-md-2">Engine Status :</label>
+            <!-- <input style="background-color: #26282B; border: none;" class="col-md-2 vehicle-name-placeholder" placeholder="0" id="enginePlaceholder"></input> -->
+            <span id="EngineStatPh" style="color: red" class="col-md-2 simulation-stat-placeholder">Off</span>
+            
+            <label style="color: #5F85DB; " class="col-md-2">Lights Status :</label>
+            <!-- <input style="background-color: #26282B; border: none;" class="col-md-2 vehicle-name-placeholder" placeholder="On/Off" id="lightsPlaceholder"></input> -->
+            <span id="LightsStatPh" style="color: red" class="col-md-2 simulation-stat-placeholder">Off</span>
+
+            <label style="color: #5F85DB; " class="col-md-2">Door Locks Status :</label>
+            <!-- <input style="background-color: #26282B; border: none;" class="col-md-2 vehicle-name-placeholder" placeholder="Locked/Unlocked" id="doorsPlaceholder"></input> -->
+            <span id="DoorStatPh" class="col-md-2 simulation-stat-placeholder">Locked</span>
+        
+            <label style="color: #5F85DB; " class="col-md-2">Fan Speed :</label>
+            <!-- <input style="background-color: #26282B; border: none;" class="col-md-2 vehicle-name-placeholder" placeholder="1-5"></input> -->
+            <span id="fanSpeedPh" class="col-md-2 simulation-stat-placeholder">0</span>
+
+            <label style="color: #5F85DB; " class="col-md-2">Temprature(°C) :</label>
+            <span id="tempraturePh" class="col-md-2 simulation-stat-placeholder">24°C</span>
+
+            <label style="color: #5F85DB; " class="col-md-2">AC Status :</label>
+            <span id="ACPh" style="color: red" class="col-md-2 simulation-stat-placeholder">Off</span>
+        </div>
+      
+        
+    </div>
+    
+    <div class="container d-flex justify-content-center">
+        <button style="--clr:#5F85DB; margin-top: 2%;" class="neon-button neon-button-home" onClick="window.location.href = 'index.html'"><span class="neon-button-span"><i class="fa-solid fa-backward"></i> Back</span><i class="neon-button-i"></i></button>
+    </div>
+
+<script src="./src/js/scriptB.js"></script>
+
+</body>
+</html>
