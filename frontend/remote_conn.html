@@ -53,17 +53,14 @@
       </nav>
 
       <div class="container home-content-wrapper">
+        <h1 class="vehicle-simulation-title"><strong>Remote Connection</strong></h1>
 
-        <div class="container d-flex justify-content-center">
-          <h1 style="color: #5F85DB; margin-top: 5%;"><strong>VehicleIQ</strong></h1>
-        </div>
-        
-        <div class="container d-flex justify-content-center">
-          <button style="--clr:#90B8F8; margin-top: 2%;" class="neon-button neon-button-home" onClick="window.location.href = 'remote_conn.html'"><span class="neon-button-span"><i class="fa-solid fa-wifi"></i></i> Remote Connection</span><i class="neon-button-i"></i></button>
-        </div>
-        
-        <div class="container d-flex justify-content-center">
-          <button style="--clr:#5F85DB; margin-top: 2%;" class="neon-button neon-button-home" onClick="window.location.href = 'simulate.html'"><span class="neon-button-span"><i class="fa-solid fa-car"></i> Simulate Vehicle</span><i class="neon-button-i"></i></button>
+        <div class="row simulation-form-container">
+            <label for="VehicleID" style="color: #5F85DB; margin-right: 1%;" class="col-md-1">VehicleID:</label>
+            
+            <input id="VehicleID" style="color: #5F85DB; height: fit-content;" class="col-md-4" placeholder="VehicleID">
+            
+            <button style="--clr:#5F85DB;" class="col-md-2 neon-button neon-button-submit simulation-form-container" ><span class="neon-button-span">Submit</span><i class="neon-button-i"></i></button>
         </div>
         
       </div>

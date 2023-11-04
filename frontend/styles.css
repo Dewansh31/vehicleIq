@@ -289,9 +289,9 @@
 
     .neon-button-submit{
       width: auto;
-      font-size: 0.5rem;
-      padding: 0.4rem 0.6rem;
-      margin: 2%;
+      font-size: 100%;
+      padding: 3px 3px;
+      margin-left: 2%;
     }
 
     @media (max-width: 540px) {
@@ -443,4 +443,13 @@
     /* color: #5F85DB; */
     color: white;
     font-style: italic;
+  }
+
+  .vehicle-simulation-title{
+    color: #5F85DB; margin: 5% auto 2% auto; text-align: center;
+  }
+
+  .simulation-form-container{
+    justify-content: center; 
+    align-items: center;
   }
