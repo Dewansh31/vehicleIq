@@ -6,6 +6,10 @@ document.getElementById("warning-button").addEventListener(
   "click",
   function() {
     document.getElementById("warnings").style.display = "none";
+
+    document.getElementById("canvas").removeAttribute("hidden");
+    document.getElementById("message").removeAttribute("hidden");
+    document.getElementById("sub-message").removeAttribute("hidden");
     try {
       // Fix up for prefixing
       window.AudioContext = window.AudioContext || window.webkitAudioContext;

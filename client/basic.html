@@ -120,18 +120,18 @@
     <div class="col-md-6 level-box level-box-des-climate">
       <div class="col-md-12  climate-ctrl-title">CLIMATE CONTROL</div>
       <!-- <div class="row col-md-12" style="display: flex; flex-wrap: wrap;"> -->
-        <div class="col-md-4 offset-md-1 climate-ctrl-displays"><i class="fa-solid fa-fan fa-xl"></i> 200</div>
-        <div class="col-md-4 offset-md-2 climate-ctrl-displays"><i class="fa-solid fa-temperature-three-quarters fa-xl"></i> 24</div>
+        <div class="col-md-4 offset-md-1 climate-ctrl-displays"><i class="fa-solid fa-fan fa-xl"></i> <span id="fanSpeed"> 1</span></div>
+        <div class="col-md-4 offset-md-2 climate-ctrl-displays"><i class="fa-solid fa-temperature-three-quarters fa-xl"></i><span id="temp"> 24</span>°C</div>
       <!-- </div> -->
 
       <div class="climate-ctrl-btns">
-        <button style="--clr:#0f27fc;" class="col-md-2 neon-button neon-button-basic"><span class="neon-button-span"><i class="fa-solid fa-fan fa-2xl"></i></i></span><i class="neon-button-i"></i></button>
+        <button id="fanPlus" style="--clr:#0f27fc;" class="col-md-2 neon-button neon-button-basic"><span class="neon-button-span"><i class="fa-solid fa-fan fa-2xl"></i></i></span><i class="neon-button-i"></i></button>
         
-        <button style="--clr:#420ffc;" class="col-md-2 neon-button neon-button-basic"><span class="neon-button-span"><i class="fa-solid fa-fan fa-sm"></i></i></span><i class="neon-button-i"></i></button>
+        <button id="fanMinus" style="--clr:#420ffc;" class="col-md-2 neon-button neon-button-basic"><span class="neon-button-span"><i class="fa-solid fa-fan fa-sm"></i></i></span><i class="neon-button-i"></i></button>
 
-        <button style="--clr:#0ff4fc;" class="col-md-2 neon-button neon-button-basic"><span class="neon-button-span"><i class="fa-solid fa-angles-up"></i></i></span><i class="neon-button-i"></i></button>
+        <button id="tempPlus" style="--clr:#0ff4fc;" class="col-md-2 neon-button neon-button-basic"><span class="neon-button-span"><i class="fa-solid fa-angles-up"></i></i></span><i class="neon-button-i"></i></button>
         
-        <button style="--clr:#fcb10f;" class="col-md-2 neon-button neon-button-basic"><span class="neon-button-span"><i class="fa-solid fa-angles-down"></i></i></span><i class="neon-button-i"></i></button>
+        <button id="tempMinus" style="--clr:#fcb10f;" class="col-md-2 neon-button neon-button-basic"><span class="neon-button-span"><i class="fa-solid fa-angles-down"></i></i></span><i class="neon-button-i"></i></button>
         
       </div>
       <div class="climate-ctrl-btns">
@@ -208,6 +208,48 @@
               }
           }
       });
+
+
+  //For climate control value increment.
+
+  // Fan Speed handeling here
+    fanSpeedVal = document.querySelector("#fanSpeed");
+    let fspeed = 1;
+    
+    document.getElementById("fanPlus").addEventListener("click",()=>{
+      if(fspeed<4){
+        fspeed++;
+        fanSpeedVal.innerText = fspeed;
+      }
+    });
+
+    document.getElementById("fanMinus").addEventListener("click",()=>{
+      if(fspeed>1){
+        fspeed--;
+        fanSpeedVal.innerText = fspeed;
+      }
+    });
+
+    
+  // Temparature handeling here
+  tempVal = document.querySelector("#temp");
+    let temp = 24;
+    
+    document.getElementById("tempPlus").addEventListener("click",()=>{
+      if(temp<24){
+        temp=temp+0.25;
+        tempVal.innerText = temp;
+      }
+    });
+
+    document.getElementById("tempMinus").addEventListener("click",()=>{
+      if(temp>16){
+        temp = temp-0.5;
+        tempVal.innerText = temp;
+      }
+    });
+
+
   </script>    
 
 </body>

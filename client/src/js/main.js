@@ -34,9 +34,6 @@ function successCallback() {
   // Call next frame
   document.getElementById("full-page-loader").style.display = "none";
 
-  document.getElementById("canvas").removeAttribute("hidden");
-  document.getElementById("message").removeAttribute("hidden");
-  document.getElementById("sub-message").removeAttribute("hidden");
   // document.getElementById("full-page-loader");
   nextFrame();
   // Add code after API is ready.
