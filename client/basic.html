@@ -6,7 +6,7 @@
     <title>VehicleIQ</title>
 
     <!-- Linking CSS here -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./src/css/styles.css">
 
 
     <!-- Including bs5 here -->
@@ -65,7 +65,7 @@
               <div class="level-box-title">FUEL LEVEL</div>
                 <section class="section-1">
                 <div class="level-box-readings">
-                  <div class="level-box-value">125</div>
+                  <div class="level-box-value">25</div>
                   <div class="level-box-metric">L</div>
                 </div>
               </section>
@@ -120,7 +120,7 @@
     <div class="col-md-6 level-box level-box-des-climate">
       <div class="col-md-12  climate-ctrl-title">CLIMATE CONTROL</div>
       <!-- <div class="row col-md-12" style="display: flex; flex-wrap: wrap;"> -->
-        <div class="col-md-4 offset-md-1 climate-ctrl-displays"><i class="fa-solid fa-fan fa-xl"></i> <span id="fanSpeed"> 1</span></div>
+        <div class="col-md-4 offset-md-1 climate-ctrl-displays"><i class="fa-solid fa-fan fa-xl"></i> <span id="fanSpeed"> 0</span></div>
         <div class="col-md-4 offset-md-2 climate-ctrl-displays"><i class="fa-solid fa-temperature-three-quarters fa-xl"></i><span id="temp"> 24</span>°C</div>
       <!-- </div> -->
 
@@ -135,9 +135,11 @@
         
       </div>
       <div class="climate-ctrl-btns">
-        <button style="--clr:#c9fc0f;" class="col-md-2 neon-button neon-button-basic"><span class="neon-button-span"><i class="fa-solid fa-wand-sparkles"></i></i> Auto</span><i class="neon-button-i"></i></button>
+        <button id="autoClimate" style="--clr:#c9fc0f;" class="col-md-2 neon-button neon-button-basic"><span class="neon-button-span"><i class="fa-solid fa-wand-sparkles"></i></i> Auto</span><i class="neon-button-i"></i></button>
         
-        <button style="--clr:#fc3e0f;" class="col-md-2 neon-button neon-button-basic"><span class="neon-button-span"><i class="fa-solid fa-power-off"></i></i> Off</span><i class="neon-button-i"></i></button>
+        <button id="onAC" style="--clr:#2bfc0f;" class="col-md-2 neon-button neon-button-basic"><span class="neon-button-span"><i class="fa-solid fa-wind"></i></i> AC</span><i class="neon-button-i"></i></button>
+
+        <button id="offClimate" style="--clr:#fc3e0f;" class="col-md-2 neon-button neon-button-basic neon-button-toggled"><span class="neon-button-span"><i class="fa-solid fa-power-off"></i></i> Off</span><i class="neon-button-i"></i></button>
         
       </div>
     </div>
@@ -154,10 +156,10 @@
       const fuelLevel = new Chart(c1, {
           type: 'doughnut',
           data: {
-              labels: ['Red', 'Blue'],
+              labels: ['Fuel Consumed', 'Fuel Remaining'],
               datasets: [{
-                  label: 'Dataset 1',
-                  data: [12, 19],
+                  label: 'Fuel',
+                  data: [30-25, 25],
                   backgroundColor: [
                       'rgba(255, 99, 132, 0.2)',
                       'rgba(54, 162, 235, 0.2)',
@@ -185,10 +187,10 @@
       const rangeLevel = new Chart(c2, {
           type: 'doughnut',
           data: {
-              labels: ['Red', 'Blue'],
+              labels: ['Range Decrement', 'Range Available'],
               datasets: [{
-                  label: 'Dataset 1',
-                  data: [12, 19],
+                  label: 'Range',
+                  data: [25, 100-25],
                   backgroundColor: [
                       'rgba(255, 99, 132, 0.2)',
                       'rgba(54, 162, 235, 0.2)',
@@ -214,17 +216,18 @@
 
   // Fan Speed handeling here
     fanSpeedVal = document.querySelector("#fanSpeed");
-    let fspeed = 1;
     
     document.getElementById("fanPlus").addEventListener("click",()=>{
-      if(fspeed<4){
+      let fspeed = Number(fanSpeedVal.innerText);
+      if(fspeed<4 && acStatus==true){
         fspeed++;
         fanSpeedVal.innerText = fspeed;
       }
     });
 
     document.getElementById("fanMinus").addEventListener("click",()=>{
-      if(fspeed>1){
+      let fspeed = Number(fanSpeedVal.innerText);
+      if(fspeed>0 && acStatus==true){
         fspeed--;
         fanSpeedVal.innerText = fspeed;
       }
@@ -233,22 +236,47 @@
     
   // Temparature handeling here
   tempVal = document.querySelector("#temp");
-    let temp = 24;
-    
-    document.getElementById("tempPlus").addEventListener("click",()=>{
-      if(temp<24){
+  
+  document.getElementById("tempPlus").addEventListener("click",()=>{
+      let temp = Number(tempVal.innerText);
+      if(temp<24 && acStatus==true){
         temp=temp+0.25;
         tempVal.innerText = temp;
       }
     });
 
     document.getElementById("tempMinus").addEventListener("click",()=>{
-      if(temp>16){
+      let temp = Number(tempVal.innerText);
+      if(temp>16 && acStatus==true){
         temp = temp-0.5;
         tempVal.innerText = temp;
       }
     });
 
+
+    // For Auto button
+    document.getElementById("autoClimate").addEventListener("click",()=>{     
+      if(acStatus==true){
+        document.querySelector("#fanSpeed").innerText = 2;
+        document.querySelector("#temp").innerText = 18;
+      }
+    });
+
+    // For Off button
+    document.getElementById("offClimate").addEventListener("click",()=>{     
+      document.querySelector("#fanSpeed").innerText = 0;
+      acStatus = false;
+      document.getElementById("offClimate").classList.add("neon-button-toggled")
+      document.getElementById("onAC").classList.remove("neon-button-toggled")
+    });
+
+    // Logic for AC button
+    let acStatus = false;
+    document.getElementById("onAC").addEventListener("click",()=>{     
+      acStatus = true;
+      document.getElementById("onAC").classList.add("neon-button-toggled")
+      document.getElementById("offClimate").classList.remove("neon-button-toggled")
+    });
 
   </script>    
 

@@ -378,6 +378,11 @@
       left: 80%;
       animation: move 3s infinite;
     }
+
+    .neon-button-toggled{
+      background: var(--clr);
+      color: var(--clr);     
+    }
     
     @keyframes move {
       0% {
