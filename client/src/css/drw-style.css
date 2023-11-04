@@ -1,6 +1,6 @@
 /* Styles */
 
-html,
+/* html,
 body {
   margin: 0;
   padding: 0;
@@ -9,20 +9,30 @@ body {
   background: #fff;
   min-height: 100vh;
   min-width: 100vw;
-}
+} */
 
 #message {
   font-family: "helvatica", sans-serif;
-  font-size: 3rem;
+  font-size: 2rem;
   text-align: center;
+  color: white;
 }
 
 #sub-message {
   font-size: 1.5em;
   text-align: center;
+  color: white;
 }
 
 #full-page-loader {
+  /* position: absolute;
+  top: auto;
+  left: auto;
+  width: auto;
+  height: auto;
+  z-index: 100;
+  background: #000; */
+
   position: absolute;
   top: 0;
   left: 0;
@@ -44,38 +54,40 @@ footer div:nth-of-type(2) {
 }
 
 #warnings {
-  position: absolute;
-  z-index: 50;
-  height: 100vh;
-  width: 100vw;
-  background: #fff;
+  /* position: absolute; */
+  /* z-index: 50; */
+  /* height: 100vh; */
+  /* width: 100vw; */
+  /* background: #fff; */
 }
 
 #warning-text {
-  width: 400px;
-  text-align: justify;
-  position: absolute;
-  top: 3em;
-  background: #fff;
+  /* width: 400px; */
+  /* text-align: justify; */
+  /* position: absolute; */
+  /* top: 3em; */
+  /* background: #fff; */
   padding: 1.5em;
   left: calc(50vw - 200px);
-  box-shadow: 2px 1px 2px 1px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 2px 1px 2px 1px rgba(0, 0, 0, 0.2); */
+
+  color: white;
 }
 
 #warning-text p {
-  position: relative;
-  line-height: 1.5em;
+  /* position: relative; */
+  /* line-height: 1.5em; */
 }
 
 #warning-button {
-  display: block;
+  /* display: block;
   margin: 2em auto;
   text-align: center;
   background: #777;
   color: #fff;
   border: 0;
   padding: 1em;
-  font-weight: bold;
+  font-weight: bold; */
 }
 
 .lds-ellipsis {
@@ -139,11 +151,8 @@ canvas {
  
   /* width: 50%; */
   /* padding: 10px; */
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  width: 500px;
+  margin: 0 auto;
+  /* display: block; */
+  width: 50%;
+  border: 2px solid white;
 }

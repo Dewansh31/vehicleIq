@@ -33,6 +33,11 @@ function main() {
 function successCallback() {
   // Call next frame
   document.getElementById("full-page-loader").style.display = "none";
+
+  document.getElementById("canvas").removeAttribute("hidden");
+  document.getElementById("message").removeAttribute("hidden");
+  document.getElementById("sub-message").removeAttribute("hidden");
+  // document.getElementById("full-page-loader");
   nextFrame();
   // Add code after API is ready.
 }
@@ -47,10 +52,10 @@ function nextFrame() {
   if (deltaTime > timeThreshold && continuous) {
     start_alarm();
     // console.log("Alarm Called");
-    body.style.background = "#f00";
+    canvas.style.border = "5px solid red";
   } else {
     stop_alarm();
-    body.style.background = "#fff";
+    canvas.style.border = "2px solid white";
   }
 
   if (JEEFACETRANSFERAPI.is_detected()) {
