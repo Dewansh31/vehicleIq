@@ -5,57 +5,90 @@ const engineOff = document.getElementById('engineOff');
 const lights = document.getElementById('lightStatus');
 const doors = document.getElementById('doorStatus');
 
-// const engPlace = document.getElementById('enginePlaceholder')
-
-let lightStat = new Boolean(false);
 let doorStat = new Boolean(false);
-let engineStat = new Boolean(false);
+let lightStat = new Boolean(false);
+
 
 engineOn.addEventListener('click', function(){
-  let text = "Engine On"
-  server.send(text);
-  engineStat = true;
-  window.onload = function(){
-    const inputElement = document.getElementById('enginePlaceholder')
-    inputElement.setAttribute('placeholder', text);
-  }
-})
+  server.send("Engine On");
+  // engineStat = true;
+});
 
-engineOff.addEventListener('click', function(){
-  while(engineStat === true){
-    console.log("Engine Off")
-    engineStat = false;
-    break;
-  }
-})
+engineOff.addEventListener('click', function(){  
+    server.send("Engine Off");
+});
 
 lights.addEventListener('click', function(){
-  let text1 = "Lights On";
-  let text2 = "Lights Off";
-  const lightElement = document.getElementById("lightsPlaceholder");
+  // Lights btn toggle
+  if (lights.classList.contains("neon-button-toggled")) {
+    lights.classList.remove("neon-button-toggled");
+  } else {
+      lights.classList.add("neon-button-toggled");
+  }
+
 
   if(lightStat === true){
-    server.send(text2);
-    lightElement.setAttribute('placeholder', text2);
+    server.send("Lights Off");
     lightStat = false;
   } else {
-    server.send(text1);
-    lightElement.setAttribute('placeholder', text2);
+    server.send("Lights On");
     lightStat = true;
   }
 });
 
 doors.addEventListener('click', function(){
-  if(doorStat === true){
-    console.log("Doors Locked")
-    doorStat = false;
+  // Doors btn toggle
+  if (doors.classList.contains("neon-button-toggled")) {
+    doors.classList.remove("neon-button-toggled");
   } else {
-    console.log("Doors Unlocked")
+      doors.classList.add("neon-button-toggled");
+  }
+
+  if(doorStat === true){
+    server.send("Doors Locked");
+    doorStat = false;
+  } else { 
+    server.send("Doors Unlocked")
     doorStat = true;
   }
 });
 
-// server.onmessage = function(event){
-//   const parsedMessage = event.data;
-  
-// }
+
+// Climate control elements
+const fanPlus = document.getElementById('fanPlus');
+const fanMinus = document.getElementById('fanMinus');
+const tempPlus = document.getElementById('tempPlus');
+const tempMinus = document.getElementById('tempMinus');
+const auto = document.getElementById('autoClimate');
+const onAC = document.getElementById('onAC');
+const offClimate = document.getElementById('offClimate');
+
+
+auto.addEventListener('click', function(){
+  server.send("AutoBtn");
+});
+
+offClimate.addEventListener('click', function(){
+  server.send("AcOff");
+});
+
+onAC.addEventListener('click', function(){
+  server.send("AcOn");
+});
+
+fanPlus.addEventListener('click', function(){
+  server.send("FanPlus");
+});
+
+fanMinus.addEventListener('click', function(){
+  server.send("fanMinus");
+});
+
+tempPlus.addEventListener('click', function(){
+  server.send("tempPlus");
+});
+
+tempMinus.addEventListener('click', function(){
+  server.send("tempMinus");
+});
+

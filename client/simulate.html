@@ -42,7 +42,7 @@
                 <a class="nav-link" href="basic.html">Basic</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="index22.html">Advanced</a>
+                <a class="nav-link" href="drow-det.html">Advanced</a>
               </li>
               <!-- <li class="nav-item">
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
@@ -69,36 +69,42 @@
         <div class="container d-flex justify-content-center">
 
           <label class="col-md-2" style="overflow: hidden; color: #5F85DB; margin-top: 5%; margin-bottom: 5%; font-weight: bolder;">Vehicle Name:  </label>
-          <input class="col-md-2" style="overflow: hidden; margin-top: 5%; margin-left: 1%; margin-bottom: 5%; background-color: #26282B; border: none;" class="vehicle-name-placeholder" placeholder="Vehicle Name" disabled></input>
+          <!-- <input class="col-md-2" style="overflow: hidden; margin-top: 5%; margin-left: 1%; margin-bottom: 5%; background-color: #26282B; border: none;" class="vehicle-name-placeholder">Volkswagen Virtus</input> -->
+          <span id="VehicleName" style="overflow: hidden; margin-top: 5%; margin-left: 1%; margin-bottom: 5%; background-color: #26282B; border: none;" class="col-md-2 simulation-stat-placeholder">Volkswagen Virtus</span>
         </div>
         
         <div class="row">
             <label style="color: #5F85DB;" class="col-md-2">Engine Status :</label>
-            <input style="background-color: #26282B; border: none;" class="col-md-2 vehicle-name-placeholder" placeholder="On/Off" disabled></input>
-        <!-- </div>
-        <div class="row"> -->
+            <!-- <input style="background-color: #26282B; border: none;" class="col-md-2 vehicle-name-placeholder" placeholder="0" id="enginePlaceholder"></input> -->
+            <span id="EngineStatPh" style="color: red" class="col-md-2 simulation-stat-placeholder">Off</span>
+            
             <label style="color: #5F85DB; " class="col-md-2">Lights Status :</label>
-            <input style="background-color: #26282B; border: none;" class="col-md-2 vehicle-name-placeholder" placeholder="On/Off" disabled></input>
-        <!-- </div>
-        <div class="row"> -->
+            <!-- <input style="background-color: #26282B; border: none;" class="col-md-2 vehicle-name-placeholder" placeholder="On/Off" id="lightsPlaceholder"></input> -->
+            <span id="LightsStatPh" style="color: red" class="col-md-2 simulation-stat-placeholder">Off</span>
+
             <label style="color: #5F85DB; " class="col-md-2">Door Locks Status :</label>
-            <input style="background-color: #26282B; border: none;" class="col-md-2 vehicle-name-placeholder" placeholder="Locked/Unlocked" disabled></input>
-        <!-- </div>
-        <div class="row"> -->
+            <!-- <input style="background-color: #26282B; border: none;" class="col-md-2 vehicle-name-placeholder" placeholder="Locked/Unlocked" id="doorsPlaceholder"></input> -->
+            <span id="DoorStatPh" class="col-md-2 simulation-stat-placeholder">Locked</span>
+        
             <label style="color: #5F85DB; " class="col-md-2">Fan Speed :</label>
-            <input style="background-color: #26282B; border: none;" class="col-md-2 vehicle-name-placeholder" placeholder="1-5" disabled></input>
-        <!-- </div>
-        <div class="row"> -->
-            <label style="color: #5F85DB; " class="col-md-2">Temprature(C) :</label>
-            <input style="background-color: #26282B; border: none;" class="col-md-2 vehicle-name-placeholder" placeholder="24" disabled></input>
+            <!-- <input style="background-color: #26282B; border: none;" class="col-md-2 vehicle-name-placeholder" placeholder="1-5"></input> -->
+            <span id="fanSpeedPh" class="col-md-2 simulation-stat-placeholder">0</span>
+
+            <label style="color: #5F85DB; " class="col-md-2">Temprature(°C) :</label>
+            <span id="tempraturePh" class="col-md-2 simulation-stat-placeholder">24°C</span>
+
+            <label style="color: #5F85DB; " class="col-md-2">AC Status :</label>
+            <span id="ACPh" style="color: red" class="col-md-2 simulation-stat-placeholder">Off</span>
         </div>
       
         
     </div>
     
     <div class="container d-flex justify-content-center">
-        <button style="--clr:#5F85DB; margin-top: 2%;" class="neon-button neon-button-home" onClick="window.location.href = 'index.html'"><span class="neon-button-span"><i class="fa-solid fa-backward"></i>  Back</span><i class="neon-button-i"></i></button>
+        <button style="--clr:#5F85DB; margin-top: 2%;" class="neon-button neon-button-home" onClick="window.location.href = 'index.html'"><span class="neon-button-span"><i class="fa-solid fa-backward"></i> Back</span><i class="neon-button-i"></i></button>
     </div>
+
+<script src="./src/js/scriptB.js"></script>
 
 </body>
 </html>

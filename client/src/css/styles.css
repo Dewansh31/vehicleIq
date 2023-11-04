@@ -458,3 +458,7 @@
     justify-content: center; 
     align-items: center;
   }
+
+  .simulation-stat-placeholder{
+    background-color: #26282B; border: none; color: white; font-style: italic;
+  }
